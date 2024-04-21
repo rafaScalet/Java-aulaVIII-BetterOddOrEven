@@ -12,10 +12,6 @@ public class Main {
         System.out.println("Type 10 numbers: ");
         for(int indx = 0; indx < value.length; indx++){
             value[indx] = in.nextInt();
-        }
-        in.close();
-
-        for (int indx = 0; indx < value.length; indx++){
             if(value[indx] > value[bigger]){
                 bigger = indx;
             }
@@ -23,6 +19,7 @@ public class Main {
                 smaller = indx;
             }
         }
+        in.close();
 
         System.out.println("Bigger: " + value[bigger]);
         System.out.println("Smaller: " + value[smaller]);
