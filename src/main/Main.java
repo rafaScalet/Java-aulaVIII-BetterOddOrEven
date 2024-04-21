@@ -4,24 +4,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int bigger = 0;
-        int smaller = 0; 
         int[] value = new int[10];
+        int odd = 0, even = 0;
         Scanner in = new Scanner(System.in);
 
         System.out.println("Type 10 numbers: ");
-        for(int indx = 0; indx < value.length; indx++){
+        for (int indx = 0; indx < value.length; indx++) {
             value[indx] = in.nextInt();
-            if(value[indx] > value[bigger]){
-                bigger = indx;
-            }
-            if(value[indx] < value[smaller]){
-                smaller = indx;
-            }
         }
         in.close();
 
-        System.out.println("Bigger: " + value[bigger]);
-        System.out.println("Smaller: " + value[smaller]);
+        for (int indx = 0; indx < value.length; indx++) {
+            if (value[indx] % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+        }
+
+        System.out.println("There are " + even + " even numbers");
+        System.out.println("There are " + odd + " odd numbers");
     }
 }
